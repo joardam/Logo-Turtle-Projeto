@@ -5,6 +5,7 @@ menu = ['Comandos', 'Novo jogo', 'Sair']
 def print_menu(stdscr, selected_row_idx):
     stdscr.clear()
     h, w = stdscr.getmaxyx()
+    stdscr.border()
     stdscr.addstr((h//2)-4, (w//2)-9,"L O G O  T U R T L E")
 
     for idx, row in enumerate(menu):

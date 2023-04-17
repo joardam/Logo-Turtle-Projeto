@@ -36,7 +36,7 @@ def main(stdscr):
         elif key == curses.KEY_ENTER or key in [10,13]:
             stdscr.addstr(0,0,"Você selecionou {}".format(menu[current_row_idx]))
             stdscr.refresh()
-            # Exit
+            # Saída
             if current_row_idx == len(menu)-1:
                 stdscr.addstr(3,0,"Até logo!")
                 stdscr.getch()

@@ -43,8 +43,10 @@ def main(stdscr):
                 stdscr.addstr(3,0,"Até logo!")
                 stdscr.getch()
                 break
+            #Jogo
             elif current_row_idx == len(menu)-2:
-                continue
+                stdscr.addstr(3,0,"Iniciando o jogo...")
+                stdscr.getch()
             #Comandos
             elif current_row_idx == len(menu)-3:
                 stdscr.addstr(2,0,"Tecla W = cima")
@@ -52,7 +54,6 @@ def main(stdscr):
                 stdscr.addstr(4,0,"Tecla S = baixo")
                 stdscr.addstr(5,0,"Tecla D = direita")
                 stdscr.getch()
-                break
         
         print_menu(stdscr, current_row_idx)
         stdscr.refresh()

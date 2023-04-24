@@ -53,15 +53,12 @@ def main(stdscr):
                         continue
                 else:
                     continue
-                
-
         # Verifica se o comando é válido
         if cmd not in ['up', 'dw', 'rt', 'lt', 'pc', 'pd' , 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
             continue
 
         # Posição atual
         new_turtle = [turtle[0], turtle[1]]
-        
         # Comandos
         
         #Pen change
@@ -71,12 +68,9 @@ def main(stdscr):
         if cmd in ['up', 'dw', 'rt', 'lt'] :
             traceback = move(new_turtle , w , cmd , value , pen_down)
         
-
         if cmd in ['sq', 'tg', 'dm', 'ci']:
             traceback = figures.drawfigure(cmd,new_turtle,w)
 
-
-        
         #Sair
         elif cmd == "ex":
             break
@@ -103,6 +97,4 @@ def main(stdscr):
         prompt.border()
         prompt.addstr(1, 1, " Comandos: ")
         prompt.refresh()
-            
 curses.wrapper(main)
-

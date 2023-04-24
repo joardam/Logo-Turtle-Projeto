@@ -78,4 +78,4 @@ def main(stdscr):
             w.addch(new_turtle[0], new_turtle[1], '@')
             w.refresh()
             turtle = new_turtle
-#curses.wrapper(main)
+curses.wrapper(main)

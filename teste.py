@@ -1,9 +1,6 @@
-a = True
+def função():
+    print('OI')
+    return "teste"
 
-a  = not True
-
-print(a)
-
-a = not a 
-
-print(a)
+objeto = função()
+print(objeto)

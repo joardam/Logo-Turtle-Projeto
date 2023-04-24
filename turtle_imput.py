@@ -196,6 +196,9 @@ def main(stdscr):
                        new_turtle[1] += 1
                        traceback = ' '
                        w.addch(new_turtle[0], new_turtle[1], traceback)
+        #Sair
+        elif cmd == "ex":
+            break
         else:
             continue
 

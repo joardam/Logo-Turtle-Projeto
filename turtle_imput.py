@@ -15,6 +15,8 @@ def main(stdscr):
     prompt.addstr(1, 1, " Comandos: ")
     prompt.refresh()
     
+
+
     # Turtle no centro
     turtle = [(sh // 2) - 3, sw // 2]
     w.addch(turtle[0], turtle[1], '@')
@@ -33,13 +35,22 @@ def main(stdscr):
         curses.noecho()
 
         if not command:
-            continue
+            continue  
         else:
             try:
                 cmd, value = command.split()
                 value = int(value)
-            except ValueError:
-                continue
+                
+            except ValueError as e:
+                if "not enough values to unpack" in str(e):
+                    cmd = command
+                    if cmd in ['pu', 'cl' ,'sq', 'tg', 'dm', 'ci']: 
+                        pass
+                    else:
+                        continue
+                else:
+                    continue
+                
 
         # Verifica se o comando é válido
         if cmd not in ['up', 'dw', 'rt', 'lt', 'pu', 'cl', 'sq', 'tg', 'dm', 'ci']:
@@ -49,29 +60,53 @@ def main(stdscr):
         new_turtle = [turtle[0], turtle[1]]
         
         # Comandos
-        if cmd == "up":
+        
+        #Pen up
+        if cmd == "pu":
+            pen_down = not pen_down
+        
+        elif cmd == "up":
             for i in range(value):
                 new_turtle[0] -= 1
                 if pen_down:
                     traceback = '|'
                     w.addch(new_turtle[0], new_turtle[1], traceback)
+                else:
+                    traceback = ' '
+                    w.addch(new_turtle[0], new_turtle[1], traceback)
+                   
+    
+
         elif cmd == "dw": #down
             for i in range(value):
                 new_turtle[0] += 1
                 if pen_down:
                     traceback = '|'
                     w.addch(new_turtle[0], new_turtle[1], traceback)
+                else:
+                    traceback = ' '
+                    w.addch(new_turtle[0], new_turtle[1], traceback)
+
+
         elif cmd == "lt": #left
             for i in range(value):
                 new_turtle[1] -= 1
                 if pen_down:
                     traceback = '-'
                     w.addch(new_turtle[0], new_turtle[1], traceback)
+                else:
+                    traceback = ' '
+                    w.addch(new_turtle[0], new_turtle[1], traceback)
+                
+                    
         elif cmd == "rt": #right
             for i in range (value):
                 new_turtle[1] += 1
                 if pen_down:
                     traceback = '-'
+                    w.addch(new_turtle[0], new_turtle[1], traceback)
+                else :
+                    traceback = ' '
                     w.addch(new_turtle[0], new_turtle[1], traceback)
         #Quadrado
         elif cmd == "sq": 
@@ -172,30 +207,7 @@ def main(stdscr):
             w.clear()
             w.border()
             w.refresh()
-        #Pen up
-        elif cmd == "pu":
-            pen_down = not pen_down
-            if not pen_down:
-                if cmd == "up":
-                    for i in range(value):
-                       new_turtle[0] -= 1
-                       traceback = ' '
-                       w.addch(new_turtle[0], new_turtle[1], traceback)
-                elif cmd == "dw":
-                    for i in range(value):
-                       new_turtle[0] += 1
-                       traceback = ' '
-                       w.addch(new_turtle[0], new_turtle[1], traceback)
-                elif cmd == "lt":
-                    for i in range(value):
-                       new_turtle[1] -= 1
-                       traceback = ' '
-                       w.addch(new_turtle[0], new_turtle[1], traceback)
-                elif cmd == "rt":
-                    for i in range (value):
-                       new_turtle[1] += 1
-                       traceback = ' '
-                       w.addch(new_turtle[0], new_turtle[1], traceback)
+            
         else:
             continue
 

@@ -53,7 +53,7 @@ def main(stdscr):
                 
 
         # Verifica se o comando é válido
-        if cmd not in ['up', 'dw', 'rt', 'lt', 'pu', 'cl', 'sq', 'tg', 'dm', 'ci']:
+        if cmd not in ['up', 'dw', 'rt', 'lt', 'pu', 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
             continue
 
         # Posição atual
@@ -207,7 +207,11 @@ def main(stdscr):
             w.clear()
             w.border()
             w.refresh()
-            
+        
+        #Sair
+        elif cmd == "ex":
+            break
+
         else:
             continue
 

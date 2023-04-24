@@ -85,7 +85,7 @@ def main(stdscr):
                 stdscr.addstr(27,0,"dm = Diamante")
                 stdscr.addstr(28,0,"ci = Círculo")
                 stdscr.addstr(30,0,"Ferramentas:")
-                stdscr.addstr(31,0,"pu = Para de desenhar/ Volta a desenhar")
+                stdscr.addstr(31,0,"pc = Para de desenhar/ Volta a desenhar")
                 stdscr.addstr(32,0,"cl = Limpa os desenhos")
                 stdscr.addstr(33,0,"ex = Sair")
                 stdscr.getch()

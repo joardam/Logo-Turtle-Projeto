@@ -44,7 +44,7 @@ def main(stdscr):
             except ValueError as e:
                 if "not enough values to unpack" in str(e):
                     cmd = command
-                    if cmd in ['pu', 'cl' ,'sq', 'tg', 'dm', 'ci']: 
+                    if cmd in ['pu', 'cl' ,'sq', 'tg', 'dm', 'ci', 'ex']: 
                         pass
                     else:
                         continue
@@ -53,7 +53,7 @@ def main(stdscr):
                 
 
         # Verifica se o comando é válido
-        if cmd not in ['up', 'dw', 'rt', 'lt', 'pu', 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
+        if cmd not in ['up', 'dw', 'rt', 'lt', 'pu', 'pd' , 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
             continue
 
         # Posição atual
@@ -62,8 +62,10 @@ def main(stdscr):
         # Comandos
         
         #Pen up
-        if cmd == "pu":
-            pen_down = not pen_down
+        if cmd == 'pu':
+            pen_down = True
+        if cmd == 'pd':
+            pen_down = False
         
         elif cmd == "up":
             for i in range(value):
@@ -164,7 +166,7 @@ def main(stdscr):
                 new_turtle[1] -= 1
                 traceback = '\\'
                 w.addch(new_turtle[0], new_turtle[1], traceback)
-         #Círculo
+        #Círculo
         elif cmd == "ci":
             for i in range(0, 7):
                 new_turtle[1] += 1  

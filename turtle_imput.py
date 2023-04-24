@@ -53,7 +53,7 @@ def main(stdscr):
                 
 
         # Verifica se o comando é válido
-        if cmd not in ['up', 'dw', 'rt', 'lt', 'pu', 'pd' , 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
+        if cmd not in ['up', 'dw', 'rt', 'lt', 'pc', 'pd' , 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
             continue
 
         # Posição atual

@@ -2,6 +2,7 @@ import curses
 from movement import move
 import figures
 
+
 def main(stdscr):
     curses.curs_set(1)
     stdscr.nodelay(True)
@@ -17,8 +18,6 @@ def main(stdscr):
     prompt.addstr(1, 1, " Comandos: ")
     prompt.refresh()
     
-
-
     # Turtle no centro
     turtle = [(sh // 2) - 3, sw // 2]
     w.addch(turtle[0], turtle[1], '@')
@@ -97,4 +96,5 @@ def main(stdscr):
         prompt.border()
         prompt.addstr(1, 1, " Comandos: ")
         prompt.refresh()
+
 curses.wrapper(main)

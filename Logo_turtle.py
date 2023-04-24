@@ -41,6 +41,26 @@ def main(stdscr):
             elif key == curses.KEY_RIGHT or key == ord('d') or key == ord('D'):
                 new_turtle[1] += 1
                 traceback = '-'
+            #Diagonal cima-direita
+            elif key == ord('e') or key == ('E'):
+                new_turtle[0] -= 1 
+                new_turtle[1] += 1
+                traceback = '/'
+            #Diagonal cima-esquerda
+            elif key == ord('q') or key == ('Q'):
+                new_turtle[0] -= 1 
+                new_turtle[1] -= 1
+                traceback = '\\'
+            #Diagonal baixo-esquerda
+            elif key == ord('z') or key == ('Z'):
+                new_turtle[0] += 1
+                new_turtle[1] -= 1
+                traceback = '/'
+            #Diagonal baixo-direita
+            elif key == ord('c') or key == ('C'):
+                new_turtle[0] += 1
+                new_turtle[1] += 1
+                traceback = '\\'
             else:
                 continue
 
@@ -58,5 +78,4 @@ def main(stdscr):
             w.addch(new_turtle[0], new_turtle[1], '@')
             w.refresh()
             turtle = new_turtle
-
-curses.wrapper(main)
+#curses.wrapper(main)

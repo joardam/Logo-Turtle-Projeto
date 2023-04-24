@@ -44,7 +44,7 @@ def main(stdscr):
             except ValueError as e:
                 if "not enough values to unpack" in str(e):
                     cmd = command
-                    if cmd in ['pu', 'cl' ,'sq', 'tg', 'dm', 'ci', 'ex']: 
+                    if cmd in ['pc', 'cl' ,'sq', 'tg', 'dm', 'ci', 'ex']: 
                         pass
                     else:
                         continue
@@ -61,11 +61,10 @@ def main(stdscr):
         
         # Comandos
         
-        #Pen up
-        if cmd == 'pu':
-            pen_down = True
-        if cmd == 'pd':
-            pen_down = False
+        #Pen change
+        if cmd == 'pc':
+            pen_down = not pen_down
+       
         
         elif cmd == "up":
             for i in range(value):

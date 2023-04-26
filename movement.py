@@ -25,7 +25,9 @@ def move(newturtle, window ,direction, steps , penstatus):
             else:
                 newturtle[1] += 1
 
-        window.addch(newturtle[0], newturtle[1], trace)
+        if penstatus:
+            window.addch(newturtle[0], newturtle[1], trace)
+            
     
     return trace , newturtle
     

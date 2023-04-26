@@ -1,6 +1,6 @@
 import curses
-#from Logo_turtle import main as logo_main
-#from turtle_imput import main as imput_main
+from Logo_turtle import main as logo_main
+from turtle_imput import main as imput_main
 
 menu = ['Comandos', 'Modo teclado','Modo texto', 'Sair']
 

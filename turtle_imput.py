@@ -15,8 +15,6 @@ def main(stdscr):
     prompt.border()
     prompt.addstr(1, 1, " Comandos: ")
     prompt.refresh()
-    
-
 
     # Turtle no centro
     turtle = [(sh // 2) - 3, sw // 2]
@@ -51,7 +49,6 @@ def main(stdscr):
                         continue
                 else:
                     continue
-                
 
         # Verifica se o comando é válido
         if cmd not in ['up', 'dw', 'rt', 'lt', 'pc' , 'cl', 'sq', 'tg', 'dm', 'ci' , 'ex']:
@@ -66,107 +63,14 @@ def main(stdscr):
         if cmd == 'pc':
             pen_down = not pen_down
        
-        
+        #Movimentação
         elif cmd in ['up', 'dw', 'rt', 'lt']:
             traceback , new_turtle = move(new_turtle, w , cmd , value , pen_down)
         
+        #Formas Geometricas
         elif cmd in ['sq', 'tg', 'dm', 'ci']:
             traceback , new_turtle = drawfigure(cmd , new_turtle , w)
 
-        #Quadrado
-        # elif cmd == "sq": 
-        #     for i in range(0, 12):
-        #         new_turtle[1] += 1
-        #         traceback = '-'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 6):
-        #         new_turtle[0] += 1
-        #         traceback = '|'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 12):
-        #         new_turtle[1] -= 1
-        #         traceback = '-'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 6):
-        #         new_turtle[0] -= 1
-        #         traceback = '|'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        # #Triângulo
-        # elif cmd == "tg":
-        #     for i in range(0, 6):
-        #         new_turtle[0] -= 1
-        #         new_turtle[1] += 1
-        #         traceback = '/'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 7):
-        #         new_turtle[0] += 1
-        #         new_turtle[1] += 1
-        #         traceback = '\\'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 14):
-        #         new_turtle[1] -= 1
-        #         traceback = '-'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        # #Diamante
-        # elif cmd == "dm":
-        #     for i in range(0, 6):
-        #         new_turtle[0] -= 1
-        #         new_turtle[1] += 1
-        #         traceback = '/'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 6):
-        #         new_turtle[0] += 1
-        #         new_turtle[1] += 1
-        #         traceback = '\\'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 6):
-        #         new_turtle[0] += 1
-        #         new_turtle[1] -= 1
-        #         traceback = '/'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 6):
-        #         new_turtle[0] -= 1
-        #         new_turtle[1] -= 1
-        #         traceback = '\\'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        # #Círculo
-        # elif cmd == "ci":
-        #     for i in range(0, 7):
-        #         new_turtle[1] += 1  
-        #         traceback = '-'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 2):
-        #         new_turtle[0] += 1  
-        #         new_turtle[1] += 1
-        #         traceback = '\\'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 2):
-        #         new_turtle[0] += 1  
-        #         traceback = '|'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 2):
-        #         new_turtle[0] += 1
-        #         new_turtle[1] -= 1   
-        #         traceback = '/'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 7):
-        #         new_turtle[1] -= 1   
-        #         traceback = '-'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 2):
-        #         new_turtle[0] -= 1
-        #         new_turtle[1] -= 1
-        #         traceback = '\\'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 2):
-        #         new_turtle[0] -= 1
-        #         traceback = '|'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
-        #     for i in range(0, 2):
-        #         new_turtle[0] -= 1
-        #         new_turtle[1] += 1
-        #         traceback = '/'
-        #         w.addch(new_turtle[0], new_turtle[1], traceback)
         #Limpar tela
         elif cmd == "cl":
             w.clear()

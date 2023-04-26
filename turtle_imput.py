@@ -1,5 +1,5 @@
 import curses
-
+from movement import move
 def main(stdscr):
     curses.curs_set(1)
     stdscr.nodelay(True)
@@ -66,49 +66,34 @@ def main(stdscr):
             pen_down = not pen_down
        
         
-        elif cmd == "up":
-            for i in range(value):
-                new_turtle[0] -= 1
-                if pen_down:
-                    traceback = '|'
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
-                else:
-                    traceback = ' '
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
-                   
-    
+        elif cmd in ['up', 'dw', 'rt', 'lt']:
+            traceback , new_turtle = move(new_turtle, w , cmd , value , pen_down)
+        
+        #     for i in range(value):
+        #         if cmd == 'up' or cmd == 'dw':
+        #             if pen_down:
+        #                 traceback = '|'
+        #             else:
+        #                 traceback = ' '
 
-        elif cmd == "dw": #down
-            for i in range(value):
-                new_turtle[0] += 1
-                if pen_down:
-                    traceback = '|'
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
-                else:
-                    traceback = ' '
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
-
-
-        elif cmd == "lt": #left
-            for i in range(value):
-                new_turtle[1] -= 1
-                if pen_down:
-                    traceback = '-'
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
-                else:
-                    traceback = ' '
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
+        #             if cmd == 'up' :
+        #                 new_turtle[0] -= 1
+        #             else:
+        #                 new_turtle[0] += 1
                 
+        #         elif cmd == 'lt' or cmd == 'rt':
+        #             if pen_down:
+        #                 traceback = '-'
+        #             else:
+        #                 traceback = ' '
                     
-        elif cmd == "rt": #right
-            for i in range (value):
-                new_turtle[1] += 1
-                if pen_down:
-                    traceback = '-'
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
-                else :
-                    traceback = ' '
-                    w.addch(new_turtle[0], new_turtle[1], traceback)
+        #             if cmd == 'lt':
+        #                 new_turtle[1] -= 1
+        #             else:
+        #                 new_turtle[1] += 1
+
+        #         w.addch(new_turtle[0], new_turtle[1], traceback)
+                    
         #Quadrado
         elif cmd == "sq": 
             for i in range(0, 12):

@@ -12,7 +12,7 @@ def move(newturtle, window ,direction, steps , penstatus):
             if direction == 'up' :
                 newturtle[0] -= 1
             else:
-                newturtle[1] += 1
+                newturtle[0] += 1
            
         elif direction == 'lt' or direction == 'rt':
             if penstatus:
@@ -27,7 +27,8 @@ def move(newturtle, window ,direction, steps , penstatus):
 
         window.addch(newturtle[0], newturtle[1], trace)
     
-    return trace
+    return trace , newturtle
+    
         
 
     

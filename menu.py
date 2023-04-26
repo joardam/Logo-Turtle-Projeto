@@ -1,6 +1,6 @@
 import curses
-from Logo_turtle import main as logo_main
-from turtle_imput import main as imput_main
+#from Logo_turtle import main as logo_main
+#from turtle_imput import main as imput_main
 
 menu = ['Comandos', 'Modo teclado','Modo texto', 'Sair']
 
@@ -63,31 +63,32 @@ def main(stdscr):
             elif current_row_idx == len(menu)-4:
                 stdscr.addstr(2,0,"MODO TECLADO:")
                 stdscr.addstr(4,0,"Tecla W = Cima")
-                stdscr.addstr(5,0,"Tecla A = Esquerda")
-                stdscr.addstr(6,0,"Tecla S = Baixo")
-                stdscr.addstr(7,0,"Tecla D = Direita")
-                stdscr.addstr(8,0,"Barra de espaço = Para de desenhar")
-                stdscr.addstr(10,0,"Diagonais:")
-                stdscr.addstr(11,0,"Tecla E = Cima-direita")
-                stdscr.addstr(12,0,"Tecla Q = Cima-esquerda")
-                stdscr.addstr(13,0,"Tecla C = Baixo-direita")
-                stdscr.addstr(14,0,"Tecla Z = Baixo-esquerda")
+                stdscr.addstr(4,19,"Tecla A = Esquerda")
+                stdscr.addstr(5,0,"Tecla S = Baixo")
+                stdscr.addstr(5,19,"Tecla D = Direita")
+                stdscr.addstr(6,0,"Barra de espaço = Para de desenhar")
+                stdscr.addstr(7,0,"Diagonais:")
+                stdscr.addstr(8,0,"Tecla E = Cima-direita")
+                stdscr.addstr(8,26,"Tecla Q = Cima-esquerda")
+                stdscr.addstr(9,0,"Tecla C = Baixo-direita")
+                stdscr.addstr(9,26,"Tecla Z = Baixo-esquerda")
 
-                stdscr.addstr(16,0,"MODO TEXTO:")
-                stdscr.addstr(17,0,"ex. 'up 3' (qualquer comando + valor)")
-                stdscr.addstr(19,0,"up = Cima")
-                stdscr.addstr(20,0,"dw = Baixo")
-                stdscr.addstr(21,0,"rt = Direita")
-                stdscr.addstr(22,0,"lt = Esquerda")
-                stdscr.addstr(24,0,"Desenhos:")
-                stdscr.addstr(25,0,"sq = Quadrado")
-                stdscr.addstr(26,0,"tg = Triângulo")
-                stdscr.addstr(27,0,"dm = Diamante")
-                stdscr.addstr(28,0,"ci = Círculo")
-                stdscr.addstr(30,0,"Ferramentas:")
-                stdscr.addstr(31,0,"pc = Para de desenhar/ Volta a desenhar")
-                stdscr.addstr(32,0,"cl = Limpa os desenhos")
-                stdscr.addstr(33,0,"ex = Sair")
+                stdscr.addstr(11,0,"MODO TEXTO:")
+                stdscr.addstr(12,0,"ex. 'up 3' (qualquer comando + valor)")
+                stdscr.addstr(13,0,"up = Cima")
+                stdscr.addstr(13,16,"dw = Baixo")
+                stdscr.addstr(14,0,"rt = Direita")
+                stdscr.addstr(14,16,"lt = Esquerda")
+                stdscr.addstr(16,0,"Desenhos:")
+                stdscr.addstr(17,0,"sq = Quadrado")
+                stdscr.addstr(17,16,"tg = Triângulo")
+                stdscr.addstr(18,0,"dm = Diamante")
+                stdscr.addstr(18,16,"ci = Círculo")
+                stdscr.addstr(20,0,"Ferramentas:")
+                stdscr.addstr(21,0,"pc = Para de desenhar/ Volta a desenhar")
+                stdscr.addstr(22,0,"cl = Limpa os desenhos")
+                stdscr.addstr(23,0,"ex = Sair")
+                stdscr.addstr(26,0,"Pressione ENTER para voltar ao Menu Principal")
                 stdscr.getch()
 
         print_menu(stdscr, current_row_idx)

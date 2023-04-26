@@ -18,7 +18,7 @@ def drawsquare(newturtle,window):
         trace = '|'
         window.addch(newturtle[0], newturtle[1], trace)
     
-    return trace
+    return trace , newturtle
     
 
 def drawtriangle(newturtle,window):
@@ -37,7 +37,7 @@ def drawtriangle(newturtle,window):
         trace = '-'
         window.addch(newturtle[0], newturtle[1], trace)
     
-    return trace
+    return trace , newturtle
     
 
 
@@ -63,7 +63,7 @@ def drawdiamond(newturtle,window):
         trace = '\\'
         window.addch(newturtle[0], newturtle[1], trace)
     
-    return trace
+    return trace , newturtle
     
 
     
@@ -105,17 +105,17 @@ def drawcircle(newturtle, window):
         trace = '/'
         window.addch(newturtle[0], newturtle[1], trace)
     
-    return trace
+    return trace , newturtle
 
 
 def drawfigure(type, newturtle, window):
     if type == "sq":
-       trace = drawsquare(newturtle, window)
+        trace , newturtle = drawsquare(newturtle, window)
     elif type == "tg":
-        trace = drawtriangle(newturtle, window)
+        trace , newturtle = drawtriangle(newturtle, window)
     elif type == "dm":
-        trace = drawdiamond(newturtle, window)
+        trace , newturtle = drawdiamond(newturtle, window)
     elif type == "ci":
-        trace = drawcircle(newturtle, window)
+        trace , newturtle = drawcircle(newturtle, window)
     
-    return trace
+    return trace ,  newturtle

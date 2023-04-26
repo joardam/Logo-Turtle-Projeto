@@ -1,6 +1,5 @@
 import curses
-from Logo_turtle import main as logo_main
-from turtle_imput import main as imput_main
+
 
 menu = ['Comandos', 'Modo teclado','Modo texto', 'Sair']
 
@@ -50,14 +49,14 @@ def main(stdscr):
                 stdscr.addstr(3,0,"Iniciando o jogo...")
                 stdscr.addstr(5,0,"Pressione Enter")
                 stdscr.getch()
-                imput_main(stdscr)
+                from turtle_imput import main as imput_main
                 break
             #Modo teclado
             elif current_row_idx == len(menu)-3:
                 stdscr.addstr(3,0,"Iniciando o jogo...")
                 stdscr.addstr(5,0,"Pressione Enter")
                 stdscr.getch()
-                logo_main(stdscr)
+                from Logo_turtle import main as logo_main
                 break
             #Comandos
             elif current_row_idx == len(menu)-4:
